@@ -1,0 +1,279 @@
+/* General Styles */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d5c28f;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+nav {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: auto;
+    height: 100px;
+    max-width: 250px;
+}
+
+.logo-text {
+    color: #c3a85f;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.login-icon {
+    width: 30px;
+    height: auto;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.bg-div {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Spaces items horizontally */
+    padding: 10px 20px;
+    background-color: black;
+}
+
+.bg-div a {
+    color: #c3a85f;
+    text-decoration: none;
+    margin-left: 20px; /* Space between text and Login link */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #c3a85f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+}
+
+/* Container */
+.container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about-section {
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.about-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Map Container */
+.map-container {
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #ffe99a;
+    color: #1a1919;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #323232;
+}
+
+/* Social Links */
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #c3a85f;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.footer-left,
+.footer-right {
+    margin: 10px 0;
+}
+
+.footer-logo {
+    height: 100px;
+    margin-right: 10px;
+}
+
+.footer-text {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #c3a85f;
+}
+
+.footer-copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.footer-copyright p {
+    font-size: x-small;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons img {
+    width: 20px;
+    height: auto;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left,
+    .footer-middle {
+        display: none;
+    }
+
+    .footer-right {
+        display: block;
+    }
+
+    .footer-logo {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .footer-content {
+        padding: 10px;
+    }
+
+    .icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .map-container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+}

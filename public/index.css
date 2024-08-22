@@ -1,0 +1,146 @@
+/* General Styles */
+.list {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topnav input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+.topnav button {
+    background-color: #ffe99a;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topnav button img {
+    width: 16px;
+    height: auto;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 2px solid #c3a85f;
+    outline-offset: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+td form {
+    display: inline-flex; /* Ensure buttons and links are inline and aligned */
+    align-items: center; /* Align icons vertically */
+    margin-right: 5px; /* Add space between icons */
+}
+
+td a,
+td form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0; /* Remove any extra margin */
+}
+
+td form button img,
+td a img {
+    width: 16px;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the icon within the button */
+}
+
+td form button:hover img,
+td a:hover img {
+    opacity: 0.8; /* Slight hover effect to indicate interactivity */
+}
+
+td form button:hover {
+    background-color: #c53030;
+}
+
+td form button:focus,
+td a:focus {
+    outline: 2px solid #c3a85f;
+    outline-offset: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topnav input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .topnav button {
+        width: auto;
+        margin-left: 0;
+    }
+}

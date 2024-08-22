@@ -1,0 +1,78 @@
+/* Login Section */
+.login-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-section h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #1a1919;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-section label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-section input[type="text"],
+.login-section input[type="email"],
+.login-section input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.login-section input[type="email"]:focus,
+.login-section input[type="password"]:focus {
+    border-color: #1a1919;
+    outline: none;
+}
+
+.login-section input[type="submit"] {
+    background-color: #ffe99a;
+    color: #1a1919;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-section input[type="submit"]:hover {
+    background-color: #323232;
+    color: white;
+}
+
+.login-section input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.go-back-button {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.go-back-icon {
+    width: 24px;
+    height: 24px;
+}
