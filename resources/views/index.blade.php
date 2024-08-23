@@ -39,13 +39,6 @@
         <!-- All Members Section -->
         <section class="list">
             <h2>List of Members</h2>
-            <div class="topnav">
-                <input type="text" placeholder="Search..">
-                <button aria-label="Search">
-                    <img src="{{ asset('images/search.png') }}" alt="Search Icon">
-                </button>
-
-            </div>
 
             <!-- List -->
             <div class="table-container">
@@ -108,10 +101,18 @@
             <div class="footer-right">
                 <div class="social-media">
                     <div class="icons">
-                        <img src="{{ asset('images/facebook-white.png') }}" alt="Facebook icon">
-                        <img src="{{ asset('images/instagram-white.png') }}" alt="Instagram icon">
-                        <img src="{{ asset('images/linkedin-white.png') }}" alt="LinkedIn icon">
-                        <img src="{{ asset('images/twitter-white.png') }}" alt="Twitter icon">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('images/facebook-white.png') }}" alt="Facebook icon">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('images/instagram-white.png') }}" alt="Instagram icon">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('images/linkedin-white.png') }}" alt="LinkedIn icon">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('images/twitter-white.png') }}" alt="Twitter icon">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -121,6 +122,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>
