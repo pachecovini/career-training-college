@@ -58,6 +58,14 @@ table {
     margin-top: 20px;
 }
 
+.table-container {
+    max-height: 400px; /* Adjust the height as needed to show 10 rows */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Hides any horizontal overflow */
+    width: 100%; /* Ensures the container is full width */
+    margin-top: 20px; /* Add space above the table */
+}
+
 table,
 th,
 td {
@@ -142,5 +150,49 @@ td a:focus {
     .topnav button {
         width: auto;
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .list {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .topnav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topnav input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .topnav button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    td a,
+    td form button {
+        width: 20px;
+        height: 20px;
+    }
+
+    td form button img,
+    td a img {
+        width: 14px;
+    }
+
+    .table-container {
+        overflow: scroll;
     }
 }
