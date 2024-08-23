@@ -14,17 +14,9 @@ class UserController extends Controller
     {
         // Create a new instance of the User model
         $users = new User();
-
-        // Assign the user's name from the request data to the model
         $users->name = $request->name;
-
-        // Assign the user's email from the request data to the model
         $users->email = $request->email;
-
-        // Hash the user's password and assign it to the model
         $users->password = Hash::make($request->password);
-
-        // Save the user to the database
         $users->save();
 
         // Automatically log the user in after registration
