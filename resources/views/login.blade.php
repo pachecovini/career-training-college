@@ -19,7 +19,7 @@
             <div class="login-container">
                 <h2 class="login-title">Login</h2>
 
-                <form class="login-form" method="POST" action="/start-section">
+                <form class="login-form" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-field">
                         <label for="email">Email:</label>
