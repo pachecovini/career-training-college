@@ -29,9 +29,7 @@ class UserController extends Controller
         $credenciais = $request->only('email', 'password');
 
         if (Auth::attempt($credenciais)) {
-            // $request->session()->regenerate();
             $user = Auth::user();
-            // $user = $request->user();
             $token = $user->createToken('authToken')->plainTextToken;
             return redirect()->intended('index')->with('token', $token);
         }
@@ -51,13 +49,8 @@ class UserController extends Controller
             return redirect('/login')->withErrors(['message' => 'User not Authenticated']);
         }
 
-        // Invalida a sessão do usuário
         $request->session()->invalidate();
-
-        // Regenera o token de sessão
         $request->session()->regenerateToken();
-
-        // Revoga todos os tokens do usuário
         $request->user()->tokens()->delete();
 
         return redirect('/login')->withErrors(['message' => 'User not Authenticated']);
