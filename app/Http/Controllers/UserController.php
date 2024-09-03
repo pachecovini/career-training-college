@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Laravel\Sanctum\HasApiTokens;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class UserController extends Controller
 {
@@ -18,50 +21,38 @@ class UserController extends Controller
         $users->email = $request->email;
         $users->password = Hash::make($request->password);
         $users->save();
-
-        // Automatically log the user in after registration
-        Auth::login($users);
-
-        // Redirect the user to the index page after successful registration and login
-        return redirect("/index");
     }
 
     // Method to handle user login
     public function login(Request $request)
     {
-        // Create an array of credentials using the email and password from the request
-        $credenciales = [
-            "email" => $request->email,
-            "password" => $request->password,
-        ];
+        $credenciais = $request->only('email', 'password');
 
-        // Attempt to authenticate the user with the given credentials
-        // The 'true' flag in the Auth::attempt method keeps the user logged in
-        if (Auth::attempt($credenciales, true)) {
-            // Regenerate the session ID to prevent session fixation attacks
-            $request->session()->regenerate();
-
-            // Redirect the user to the intended page or to the index page
-            return redirect()->intended("/index");
-        } else {
-            // If authentication fails, redirect to the loginFail page
-            return redirect("/loginFail");
+        if (Auth::attempt($credenciais)) {
+            $user = Auth::user();
+            $token = $user->createToken('authToken')->plainTextToken;
+            return redirect()->intended('index')->with('token', $token);
         }
+
+        return redirect('/login')->withErrors(['message' => 'Invalid credentials']);
     }
 
-    // Method to handle user logout
+
     public function logout(Request $request)
     {
-        // Log the user out of the application
-        Auth::logout();
 
-        // Invalidate the user's session to prevent reuse
+        $user = $request->user();
+
+        if ($user) {
+            $user->tokens()->delete();
+        } else {
+            return redirect('/login')->withErrors(['message' => 'User not Authenticated']);
+        }
+
         $request->session()->invalidate();
-
-        // Regenerate the session token to prevent CSRF attacks
         $request->session()->regenerateToken();
+        $request->user()->tokens()->delete();
 
-        // Redirect the user to the login page after logout
-        return redirect("/login");
+        return redirect('/login')->withErrors(['message' => 'User not Authenticated']);
     }
 }
